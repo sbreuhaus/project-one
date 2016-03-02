@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+
+}
+
+.start-col {
+  min-width: 33%;
+  min-height: 100vh;
+  border: 1px dotted red;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#site-wrapper {
+  min-width: 100vh;
+  min-height: 100vh;
+  background-color: lightblue;
+  margin: 0 auto;
+  display: flex;
+  /*justify-content: flex-end;*/
+}
+
+#x-img {
+  background-color: #FF530D;
+  min-height: 100vh;
+}
