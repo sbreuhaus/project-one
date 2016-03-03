@@ -37,7 +37,7 @@ p {
 #site-wrapper {
   min-width: 100vh;
   min-height: 100vh;
-  background-color: white;
+  background-color: black;
   margin: 0 auto;
   display: flex;
   /*justify-content: flex-end;*/
@@ -65,7 +65,7 @@ p {
 .hidden {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s linear 3000ms, opacity 2000ms;
+  transition: visibility 0s linear 2000ms, opacity 2000ms;
 }
 
 .start-col:hover{
@@ -76,6 +76,19 @@ p {
   -o-transform:scale(1.02);
   transform:scale(1.02);
 }
+
+#countDown-Style {
+  min-width: 100vh;
+  min-height: 100vh;
+  background-color: red;
+  margin: 0 auto;
+  /*display: flex;*/
+
+}
+
+
+
+
 
 /*#show {
 
