@@ -21,14 +21,11 @@ ztile.addEventListener('click', function(){  // add a style to make tile fade aw
   console.log("Z tile clicked");
 })
 
-var gameWrapper = document.querySelector("site-wraper-game");
-var siteWrapperDiv = document.querySelector("#site-wrapper-opening");
+var opening = document.querySelector(".opening");
+var siteWrapperDiv = document.querySelector("#site-wrapper");
 var startTiles = document.querySelectorAll(".start-col");
 var counterDiv = document.createElement("div");
 counterDiv.setAttribute("id", "count-in");
-var siteWrapperGame = document.createElement("div");
-siteWrapperGame.setAttribute("id", "site-wrapper-game");
-var body = document.querySelector('body');
 
 //counterDiv.setAttribute("style", "width: 300px; height: 500px; background: blue; margin: 0; top: 200px;");
 // countDownDiv.document.body.appendChild(counterDiv);
@@ -67,42 +64,22 @@ function countDown(){
   var countDownNum = document.createElement('h1');
   countDownNum.setAttribute("id", "intro-count-down")
   counterDiv.appendChild(countDownNum);
-  siteWrapperDiv.appendChild(countDownDiv);
+  document.body.appendChild(countDownDiv);
   countDownDiv.appendChild(counterDiv);
-  countDownDiv.setAttribute("id", "count-down-div");
-
-  //   "style", "width: 100%; height: 100vh; background: yellow; margin: 0; position:relative; \
-  // display:flex; flex-direction:row; justify-content:space-around;");
+  countDownDiv.setAttribute("style", "width: 100%; height: 100vh; background: yellow; margin: 0; position:relative; \
+  display:flex; flex-direction:row; justify-content:space-around;");
   var interval  = setInterval(function(){
      count -= 1
      countDownNum.innerText = count;
      console.log(count);
     if(count === 0){
-      console.log('this is running');
         clearInterval(interval);
         countDownNum.innerText = "";
-        removeOpeningDivs();
-        // startGame();
-
     }
 }, 750);
 }
 
-function removeOpeningDivs(){
-  siteWrapperDiv.innerHTML = "";
-  console.log("cleaning shit up yo");
-  // siteWrapperDiv.remove();
-}
 
-
-
-
-// function startGame(){
-//   console.log("Start game");
-//
-//   body.appendChild(siteWrapperGame);
-//
-// }
 
 
 
