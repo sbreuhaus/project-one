@@ -58,8 +58,12 @@ p {
   min-height: 100vh;
 }
 
-#timer {
-  color: white;
+#count-in {
+  min-width: 500px;
+  min-height: 500px;
+  background: blue;
+  margin: 0;
+  top: 200px;
 }
 
 .hidden {
@@ -77,8 +81,8 @@ p {
   transform:scale(1.02);
 }
 
-#countDown-Style {
-  min-width: 100vh;
+.countDown-Style {
+  min-width: 100%;
   min-height: 100vh;
   background-color: red;
   margin: 0 auto;

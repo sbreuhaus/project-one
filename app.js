@@ -23,6 +23,10 @@ ztile.addEventListener('click', function(){  // add a style to make tile fade aw
 
 var siteWrapperDiv = document.querySelector("#site-wrapper");
 var startTiles = document.querySelectorAll(".start-col");
+var counterDiv = document.createElement("div");
+counterDiv.setAttribute("id", "count-in");
+//counterDiv.setAttribute("style", "width: 300px; height: 500px; background: blue; margin: 0; top: 200px;");
+// countDownDiv.document.body.appendChild(counterDiv);
 
 
 // console.log(siteWrapperDiv);
@@ -38,16 +42,41 @@ function countDownDelay(){
    var delay = setInterval(function(){
    console.log("dlayed")
    console.log(startTiles);
-  //  startTiles.classList.remove("start-col");
    siteWrapperDiv.remove(startTiles);
-   var countDownDiv = document.createElement('div');
-   document.body.appendChild(countDownDiv);
-   countDownDiv.innerText = "";
-   countDownDiv.setAttribute("style", "width: 100%; height: 100vh; background: yellow; margin: 0;");
-  // countDownDiv.classList.add("#countDown-style");
+  //  var countDownDiv = document.createElement('div');
+  //  document.body.appendChild(countDownDiv);
+  //  countDownDiv.appendChild(counterDiv);
+  //  counterDiv.innerText = count;
+  //  countDownDiv.setAttribute("style", "width: 100%; height: 100vh; background: yellow; margin: 0; position:relative; \
+  //  display:flex; flex-direction:row; justify-content:space-around;");
+   countDown();
+   console.log("about to clear");
    clearInterval(delay);
-}, 1500)
+
+ }, 1500)
 }
+
+function countDown(){
+  var count = 4;
+  var countDownDiv = document.createElement('div');
+  var countDownNum = document.createElement('h1');
+  counterDiv.appendChild(countDownDiv);
+  document.body.appendChild(countDownDiv);
+  countDownDiv.appendChild(counterDiv);
+  countDownDiv.setAttribute("style", "width: 100%; height: 100vh; background: yellow; margin: 0; position:relative; \
+  display:flex; flex-direction:row; justify-content:space-around;");
+  var interval  = setInterval(function(){
+     count -= 1
+     counterDiv.innerText = count;
+     console.log(count);
+    if(count === 0){
+        clearInterval(interval);
+        counterDiv.innerText = "";
+    }
+}, 750);
+}
+
+
 
 
 // element.classList.remove()
