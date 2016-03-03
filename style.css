@@ -4,6 +4,21 @@
 
 }
 
+h1 {
+  font-family:'Fjalla One', sans-serif;
+  color: white;
+  font-size: 5em;
+  padding: 20px;
+}
+
+p {
+  font-family:'Fjalla One', sans-serif;
+  color: white;
+  font-size: 2em;
+  padding: 20px;
+  position: static;;
+  bottom: 100px;
+}
 .start-col {
   min-width: 33%;
   min-height: 100vh;
@@ -11,6 +26,7 @@
   flex-direction: column;
   padding: 0;
   margin: 0 auto;
+  /* Below 5 lines taken from http://www.jeremycookson.com/top-10-css-hover-effects/*/
   -webkit-transition:all 0.5s ease-out;
   -moz-transition:all 0.5s ease-out;
   -ms-transition:all 0.5s ease-out;
@@ -21,7 +37,7 @@
 #site-wrapper {
   min-width: 100vh;
   min-height: 100vh;
-  background-color: black;
+  background-color: white;
   margin: 0 auto;
   display: flex;
   /*justify-content: flex-end;*/
@@ -42,6 +58,9 @@
   min-height: 100vh;
 }
 
+#timer {
+  color: white;
+}
 
 .hidden {
   visibility: hidden;
@@ -50,6 +69,7 @@
 }
 
 .start-col:hover{
+/* Below five lines taken from http://www.jeremycookson.com/top-10-css-hover-effects/*/
   -webkit-transform:scale(1.02);
   -moz-transform:scale(1.02);
   -ms-transform:scale(1.02);
