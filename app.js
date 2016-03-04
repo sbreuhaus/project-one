@@ -1,6 +1,9 @@
 console.log("JS Loaded");
 
-var pickedpickedTrivia;
+var pickedTrivia;
+var lameMusic;
+var animals;
+var history;
 
 var xtile = document.querySelector('#x-img'); //clickable tile.  Should be able to
 xtile.addEventListener('click', function(){   // add a style to make tiles fade away.
@@ -110,14 +113,25 @@ function startGame(){
   var question = document.createElement("h1");
   question.setAttribute("id", "questionText");
   content1.appendChild(question);
-  question.innerText = musicTrivia.questions.q1
+  question.innerText = trivia[selector].questions.
+  if(pickedTrivia === xtile){
+    console.log("xtile bitch");
 
+  }
 
 }
 
 function selectTrivia(){
-
+  if(pickedTrivia === xtile){
+     selector = "music";
+  }if(pickedTrivia === ytile){
+    animals = true;
+  } else{
+    history = true;
+  }
 }
+
+trivia[selector][1]
 
 
 // element.classList.remove()
