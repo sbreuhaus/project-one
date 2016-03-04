@@ -98,24 +98,6 @@ p {
   justify-content:space-around;
 }
 
-#player-input{
-  width: 33%;
-  height: 200px;
-  background: black;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  color: white;
-  font-size: 90%;
-}
-
-/*#player-input:focus, input:focus{
-    outline: none;
-}
-
-#player-input[type="text"], textarea {
-  background-color : #d1d1d1;
-}*/
 
 .hidden {
   visibility: hidden;

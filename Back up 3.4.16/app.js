@@ -1,20 +1,17 @@
 console.log("JS Loaded");
 
 var pickedTrivia;
-var music;
+var lameMusic;
 var animals;
 var history;
-var selector;
-
 
 var xtile = document.querySelector('#x-img'); //clickable tile.  Should be able to
 xtile.addEventListener('click', function(){   // add a style to make tiles fade away.
   tileFade();
   countDownDelay();
   console.log("X tile clicked");
-  selector = "music";
-  selectTrivia();
-
+  pickedTrivia = xtile;
+  console.log(pickedTrivia);
 })
 
 var ytile = document.querySelector('#y-img'); //clickable tile
@@ -22,8 +19,8 @@ ytile.addEventListener('click', function(){  // add a style to make tiles fade a
   tileFade();
   countDownDelay();
   console.log("Y tile clicked");
-  selector = "animal";
-
+  pickedTrivia = ytile;
+  console.log(pickedTrivia);
 })
 
 var ztile = document.querySelector('#z-img'); //clickable tile
@@ -31,8 +28,7 @@ ztile.addEventListener('click', function(){  // add a style to make tile fade aw
   tileFade();
   countDownDelay();
   console.log("Z tile clicked");
-  selector = "history";
-
+  pickedTrivia = ztile;
 })
 
 var gameWrapper = document.querySelector("site-wraper-game");
@@ -43,13 +39,12 @@ counterDiv.setAttribute("id", "count-in");
 var siteWrapperGame = document.createElement("div");
 siteWrapperGame.setAttribute("id", "site-wrapper-game");
 var body = document.querySelector('body');
-var question = document.createElement("h1");
-question.setAttribute("id", "questionText");
-// var playerInput = document.createElement("input");           // INPUT FIELD
-// playerInput.setAttribute("id", "player-input");            // INPUT FIELD
-// playerInput.setAttribute("placeholder", "answer dammit") // INPUT FIELD
+
+//counterDiv.setAttribute("style", "width: 300px; height: 500px; background: blue; margin: 0; top: 200px;");
+// countDownDiv.document.body.appendChild(counterDiv);
 
 
+// console.log(siteWrapperDiv);
 
 function tileFade(){
   xtile.classList.toggle('hidden');
@@ -98,12 +93,11 @@ function countDown(){
       startGame();
 
     }
-}, 150);
+}, 750);
 }
 
 function removeOpeningDivs(){
   siteWrapperDiv.innerHTML = "";
-  // siteWrapperDiv.style.display = "none";
   console.log("cleaning shit up yo");
   // siteWrapperDiv.remove();
 }
@@ -116,41 +110,28 @@ function startGame(){
   var content1 = document.createElement("div");
   content1.setAttribute("id", "content1");
   siteWrapperDiv.appendChild(content1);
-
-  // var question = document.createElement("h1");
-  // question.setAttribute("id", "questionText");
-  question.innerText = trivia[selector].questions[0];
+  var question = document.createElement("h1");
+  question.setAttribute("id", "questionText");
   content1.appendChild(question);
-  content1.appendChild(playerInput);
-  // if(pickedTrivia === xtile){
-  //   console.log("xtile bitch");
+  // question.innerText = trivia[selector].questions.
+  if(pickedTrivia === xtile){
+    console.log("xtile bitch");
 
-  // }
+  }
+
 }
-
-//
-//   if(pickedTrivia === xtile){
-//      selector = "music";
-//   }if(pickedTrivia === ytile){
-//      selector = "animal";
-//   } else{
-//      selector = "history";
-//   }
-// }
 
 function selectTrivia(){
-  // if(selector = "music"){
-  //   console.log("inside selecttrivia");
-  //   question.innerText = "Got It"
-  // }
-  //
-
-  console.log(trivia[selector].questions);
+  if(pickedTrivia === xtile){
+     selector = "music";
+  }if(pickedTrivia === ytile){
+    animals = true;
+  } else{
+    history = true;
+  }
 }
 
-
-
-// trivia[selector][1]
+trivia[selector][1]
 
 
 // element.classList.remove()
