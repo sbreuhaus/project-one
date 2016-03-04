@@ -10,7 +10,9 @@ var trivia = {
   "In 2015 Pitbull and Ne-Yo had their second collaboration reach the top 10 of the Billboard Hot 100. In the music video for the song the artists are saving up money for a New Year's Eve party in 1999. What is the name of this popular song that opens with 'I knew my rent was gon' be late about a week ago'?",
   "The song 'Here' was released in 2015 by an artist that was just 18 years of age and it reached the number seven position on the Billboard Hot 100. What Canadian singer had an unexpected hit with 'Here' which was released from her debut album 'Know-It-All'."
 ],
-  answers: ["One Direction", "7/11", "See You Again", "Time of Our Lives", "Alessia Cara"]
+  answers: ["One Direction", "7/11", "See You Again", "Time of Our Lives", "Alessia Cara"],
+  wrongAnswers: ["311", "Hotline Bling", "whitney Houston", "WUT", "Tha Bizness", "Nicki Minaj", "I Need A Drink", "Rihanna",
+  "Work", "Justin Bieber", "Jimi Hendrix", "PillowTalk"]
 },
 //
 // var userAnswer = document.querySelector('#answer-input').value
