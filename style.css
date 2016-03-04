@@ -60,6 +60,10 @@ p {
 
 }
 
+#questionText {
+  font-size: 3em;
+}
+
 #x-img {
   background-color: #FF4F00;
   min-height: 100vh;
@@ -100,6 +104,11 @@ p {
   opacity: 0;
   transition: visibility 0s linear 2000ms, opacity 2000ms;
 }
+
+.more-hidden{
+  display: none;
+}
+
 
 .start-col:hover{
 /* Below five lines taken from http://www.jeremycookson.com/top-10-css-hover-effects/*/

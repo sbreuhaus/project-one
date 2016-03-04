@@ -1,0 +1,169 @@
+body {
+    font-family: Copperplate, sans-serif;
+    background-color: rgba(92, 170, 237, 1);
+    padding: 20px;
+}
+
+header {
+    background-color: rgba(237, 159, 92, 1);
+    max-height: 650px;
+    padding: 20px;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+    border: 5px solid white;
+}
+
+p {
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+#intropic {
+    width: 60em;
+    height: 40em;
+    float: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+#introbox {
+    max-height: 200px;
+    background-color: rgba(0, 0, 0, .25);
+    float: center;
+    position: relative;
+    margin: 0 auto;
+    color: rgba(225,225,225,1);
+    text-align: center;
+}
+
+#infobox {
+    height: 220px;
+    margin: 30px auto;
+    float: center;
+    position: relative;
+    max-width: 1200px;
+    padding: 20px;
+    background: rgba(237, 159, 92, 1);
+}
+
+#picboxlandscape {
+    height: 150px;
+    width: 200px;
+    margin: 5px;
+    float: left;
+}
+
+#picboxportrait {
+    height: 200px;
+    width: 150px;
+    margin: 5px;
+    float: left;
+}
+
+#textbox {
+    height: 200px;
+    width: 70%;
+    float: right;
+    text-align: justify;
+}
+
+.text {}
+
+.text2 {}
+
+.text3 {}
+
+.text4 {}
+
+.text5 {}
+
+.text6 {}
+
+.text7 {}
+
+.hidden {
+    display: none;
+}
+
+.hidden2 {
+    display: none;
+}
+
+.hidden3 {
+    display: none;
+}
+
+.hidden4 {
+    display: none;
+}
+
+.hidden5 {
+    display: none;
+}
+
+.hidden6 {
+    display: none;
+}
+
+.hidden7 {
+    display: none;
+}
+
+.slideLeft {
+    animation-name: slideLeft;
+    -webkit-animation-name: slideLeft;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(150%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slideLeft {
+    0% {
+        -webkit-transform: translateX(150%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+.slideRight {
+    animation-name: slideRight;
+    -webkit-animation-name: slideRight;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slideRight {
+    0% {
+        -webkit-transform: translateX(-150%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}

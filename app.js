@@ -1,10 +1,14 @@
 console.log("JS Loaded");
 
+var pickedpickedTrivia;
+
 var xtile = document.querySelector('#x-img'); //clickable tile.  Should be able to
 xtile.addEventListener('click', function(){   // add a style to make tiles fade away.
   tileFade();
   countDownDelay();
   console.log("X tile clicked");
+  pickedTrivia = xtile;
+  console.log(pickedTrivia);
 })
 
 var ytile = document.querySelector('#y-img'); //clickable tile
@@ -12,6 +16,8 @@ ytile.addEventListener('click', function(){  // add a style to make tiles fade a
   tileFade();
   countDownDelay();
   console.log("Y tile clicked");
+  pickedTrivia = ytile;
+  console.log(pickedTrivia);
 })
 
 var ztile = document.querySelector('#z-img'); //clickable tile
@@ -19,6 +25,7 @@ ztile.addEventListener('click', function(){  // add a style to make tile fade aw
   tileFade();
   countDownDelay();
   console.log("Z tile clicked");
+  pickedTrivia = ztile;
 })
 
 var gameWrapper = document.querySelector("site-wraper-game");
@@ -47,7 +54,8 @@ function countDownDelay(){
    var delay = setInterval(function(){
    console.log("dlayed")
    console.log(startTiles);
-   siteWrapperDiv.remove(startTiles);
+  //  siteWrapperDiv.remove(startTiles);
+  siteWrapperDiv.innerHTML = "";
   //  var countDownDiv = document.createElement('div');
   //  document.body.appendChild(countDownDiv);
   //  countDownDiv.appendChild(counterDiv);
@@ -58,7 +66,7 @@ function countDownDelay(){
    console.log("about to clear");
    clearInterval(delay);
 
- }, 1500)
+ }, 1100)
 }
 
 function countDown(){
@@ -70,19 +78,16 @@ function countDown(){
   siteWrapperDiv.appendChild(countDownDiv);
   countDownDiv.appendChild(counterDiv);
   countDownDiv.setAttribute("id", "count-down-div");
-
-  //   "style", "width: 100%; height: 100vh; background: yellow; margin: 0; position:relative; \
-  // display:flex; flex-direction:row; justify-content:space-around;");
   var interval  = setInterval(function(){
      count -= 1
      countDownNum.innerText = count;
      console.log(count);
     if(count === 0){
-      console.log('this is running');
-        clearInterval(interval);
-        countDownNum.innerText = "";
-        removeOpeningDivs();
-        // startGame();
+      console.log('last part of interval??');
+      clearInterval(interval);
+      countDownNum.innerText = "";
+      removeOpeningDivs();
+      startGame();
 
     }
 }, 750);
@@ -97,14 +102,22 @@ function removeOpeningDivs(){
 
 
 
-// function startGame(){
-//   console.log("Start game");
-//
-//   body.appendChild(siteWrapperGame);
-//
-// }
+function startGame(){
+  console.log("Start game");
+  var content1 = document.createElement("div");
+  content1.setAttribute("id", "content1");
+  siteWrapperDiv.appendChild(content1);
+  var question = document.createElement("h1");
+  question.setAttribute("id", "questionText");
+  content1.appendChild(question);
+  question.innerText = musicTrivia.questions.q1
 
 
+}
+
+function selectTrivia(){
+
+}
 
 
 // element.classList.remove()

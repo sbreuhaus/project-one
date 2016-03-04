@@ -1,3 +1,5 @@
+console.log("global loaded");
+
 var musicTrivia = {
   questions: { q1: "Our first song of the quiz is 'Perfect' which reached number 10 on the Billboard Hot 100 in 2015. Which band from London that includes members named Niall, Liam, Harry, and Louis released the song 'Perfect' off of their 'Made in the A.M.' album?",
   q2: "In 2015 Beyoncé Knowles had a song that reached number eighteen on the Billboard Hot 100. What is the name of this upbeat dance song that includes the line 'Man, this here like rollin' dice, man, this here like rollin dice?",
