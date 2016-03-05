@@ -16,7 +16,7 @@ p {
   color: white;
   font-size: 2em;
   padding: 20px;
-  position: static;;
+  position: static;
   bottom: 100px;
 }
 
@@ -114,8 +114,16 @@ p {
   height: 100px;
   width: 33%;
   border: none;
-  background-color: white;
+  background-color: black;
 
+}
+
+#answer-text {
+  font-family:'Fjalla One', sans-serif;
+  color: white;
+  font-size: 3em;
+  padding: 20px;
+  position: static;
 }
   /* "wobble" code taken from http://www.jeremycookson.com/top-10-css-hover-effects/*/
 

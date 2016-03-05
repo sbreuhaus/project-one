@@ -1,12 +1,45 @@
 console.log("JS Loaded");
 
+var trivia;
 var pickedTrivia;
 var music;
 var animals;
 var history;
 var selector;
 var removed;
+var correctAnswerPull;
 
+var gameWrapper = document.querySelector("site-wraper-game");
+var siteWrapperDiv = document.querySelector("#site-wrapper-opening");
+var startTiles = document.querySelectorAll(".start-col");
+var counterDiv = document.createElement("div");
+counterDiv.setAttribute("id", "count-in");
+var siteWrapperGame = document.createElement("div");
+siteWrapperGame.setAttribute("id", "site-wrapper-game");
+var body = document.querySelector('body');
+var question = document.createElement("h1"); // questions text div
+question.setAttribute("id", "questionText");
+var choicesDiv = document.createElement("div"); // div to store the three choices
+choicesDiv.setAttribute("id", "choices-div");
+var correctChoice = document.createElement("button"); //button for the answer[i]
+correctChoice.setAttribute("class", "choice-button wobble")
+var wrongChoice1 = document.createElement("button"); // wrong answer 1
+wrongChoice1.setAttribute("class", "choice-button wobble");
+var wrongChoice2 = document.createElement("button"); //wrong answer 2
+wrongChoice2.setAttribute("class", "choice-button wobble");
+var pCorrectChoice = document.createElement("p");
+pCorrectChoice.setAttribute("id", "answer-text");
+var pWrongChoice1 = document.createElement("p");
+pWrongChoice1.setAttribute("id", "answer-text");
+var pWrongChoice2 = document.createElement("p");
+pWrongChoice2.setAttribute("id", "answer-text");
+// var playerInput = document.createElement("input");           // INPUT FIELD
+// playerInput.setAttribute("id", "player-input");            // INPUT FIELD
+// playerInput.setAttribute("placeholder", "answer dammit") // INPUT FIELD
+
+// var createButtons(){
+//
+// }
 
 var xtile = document.querySelector('#x-img'); //clickable tile.  Should be able to
 xtile.addEventListener('click', function(){   // add a style to make tiles fade away.
@@ -36,34 +69,9 @@ ztile.addEventListener('click', function(){  // add a style to make tile fade aw
   randomWrongAnswers();
   console.log("Z tile clicked");
   selector = "history";
-
 })
 
-var gameWrapper = document.querySelector("site-wraper-game");
-var siteWrapperDiv = document.querySelector("#site-wrapper-opening");
-var startTiles = document.querySelectorAll(".start-col");
-var counterDiv = document.createElement("div");
-counterDiv.setAttribute("id", "count-in");
-var siteWrapperGame = document.createElement("div");
-siteWrapperGame.setAttribute("id", "site-wrapper-game");
-var body = document.querySelector('body');
-var question = document.createElement("h1"); // questions text div
-question.setAttribute("id", "questionText");
-var choicesDiv = document.createElement("div"); // div to store the three choices
-choicesDiv.setAttribute("id", "choices-div");
-var correctChoice = document.createElement("button"); //button for the answer[i]
-correctChoice.setAttribute("class", "choice-button wobble")
-var wrongChoice1 = document.createElement("button"); // wrong answer 1
-wrongChoice1.setAttribute("class", "choice-button wobble");
-var wrongChoice2 = document.createElement("button"); //wrong answer 2
-wrongChoice2.setAttribute("class", "choice-button wobble");
-// var playerInput = document.createElement("input");           // INPUT FIELD
-// playerInput.setAttribute("id", "player-input");            // INPUT FIELD
-// playerInput.setAttribute("placeholder", "answer dammit") // INPUT FIELD
 
-// var createButtons(){
-//
-// }
 
 
 
@@ -78,14 +86,7 @@ function countDownDelay(){
    var delay = setInterval(function(){
    console.log("dlayed")
    console.log(startTiles);
-  //  siteWrapperDiv.remove(startTiles);
-  siteWrapperDiv.innerHTML = "";
-  //  var countDownDiv = document.createElement('div');
-  //  document.body.appendChild(countDownDiv);
-  //  countDownDiv.appendChild(counterDiv);
-  //  counterDiv.innerText = count;
-  //  countDownDiv.setAttribute("style", "width: 100%; height: 100vh; background: yellow; margin: 0; position:relative; \
-  //  display:flex; flex-direction:row; justify-content:space-around;");
+   siteWrapperDiv.innerHTML = "";
    countDown();
    console.log("about to clear");
    clearInterval(delay);
@@ -119,19 +120,21 @@ function countDown(){
 
 function removeOpeningDivs(){
   siteWrapperDiv.innerHTML = "";
-  // siteWrapperDiv.style.display = "none";
   console.log("cleaning shit up");
   // siteWrapperDiv.remove();
 }
 
-function appendButtons(){
+function appendButtons(){  // appends button divs and the answers to them
   content1.appendChild(choicesDiv);
   choicesDiv.appendChild(correctChoice);
-  var pCorrectChoice = document.createElement("p");
   correctChoice.appendChild(pCorrectChoice);
   choicesDiv.appendChild(wrongChoice1);
   choicesDiv.appendChild(wrongChoice2);
-  pCorrectChoice.innerText = trivia[selector].answers[0];
+  wrongChoice1.appendChild(pWrongChoice1);
+  wrongChoice2.appendChild(pWrongChoice2);
+  // pCorrectChoice.innerText = trivia[selector].answers[0];
+  // pWrongChoice1.innerText = wrongRemoved1;
+  // pWrongChoice2.innerText = wrongRemoved2;
 
 }
 
@@ -142,13 +145,12 @@ function startGame(){
   var content1 = document.createElement("div");
   content1.setAttribute("id", "content1");
   siteWrapperDiv.appendChild(content1);
-  question.innerText = trivia[selector].questions[0];
+  // question.innerText = trivia[selector].questions[0];
   content1.appendChild(question);
   appendButtons();
-  wrongChoice1.innerText = wrongRemoved1;
-  wrongChoice2.innerText = wrongRemoved2;
 
 }
+
 // Fisher Yates shuffle from Stack-O
 
 function shuffle(array) {
@@ -170,25 +172,66 @@ function shuffle(array) {
   return array;
 }
 
-function randomWrongAnswers(){
-console.log("inside random answers");
- shuffle(trivia[selector].wrongAnswers);
- removed = trivia[selector].wrongAnswers.splice(0, 2);
- wrongRemoved1 = removed[0];
- wrongRemoved2 = removed[1];
- return wrongRemoved1;
- return wrongRemoved2;
+function randomWrongAnswers(){ // randomly pulls two wrong answers
+  console.log("inside random answers");
+  shuffle(trivia[selector].wrongAnswers);
+  removed = trivia[selector].wrongAnswers.splice(0, 2);
+  wrongRemoved1 = removed[0];
+  wrongRemoved2 = removed[1];
+  return wrongRemoved1;
+  return wrongRemoved2;
 }
 
-function selectTriviaAnswers(){
+function randomizeAllAnswers(){ // rondomizes all 3 of the potential answers;
+  // need to assign a true or false value to these answers.
+  //not showing up right now//
+  pullCorrectAnswer();
+  var currentAnswerArr = [wrongRemoved1, wrongRemoved2, correctAnswerPull]
+  shuffle(currentAnswerArr);
+  console.log("randomizing");
+  pCorrectChoice.innerText = currentAnswerArr[0]
+  pWrongChoice1.innerText = currentAnswerArr[1]
+  pWrongChoice2.innerText = currentAnswerArr[2]
 
+}
 
-  // console.log(trivia[selector].questions);
+function pullCorrectAnswer(){  //pulls out 1 correct answer.
+  // for(selector in trivia){
+  //
+  // }
+  correctAnswerPull = trivia[selector].answers.splice(0, 1);
+  // correctAnswerPull = true;
+  return correctAnswerPull;
+  console.log("pulling");
 }
 
 
 
-// trivia[selector][1]
 
 
-// element.classList.remove()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////bottom
