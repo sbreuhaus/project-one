@@ -11,6 +11,15 @@ h1 {
   padding: 20px;
 }
 
+#game-over {
+  font-family:'Fjalla One', sans-serif;
+  color: white;
+  font-size: 5em;
+  padding: 20px;
+  top: 300px;
+  margin-top: 200px;
+}
+
 p {
   font-family:'Fjalla One', sans-serif;
   color: white;
@@ -42,7 +51,7 @@ p {
   transition:all 0.5s ease-out;
 }
 
-#site-wrapper-opening {
+.site-wrapper-opening {
   min-width: 100vh;
   min-height: 100vh;
   background-color: black;
@@ -51,10 +60,10 @@ p {
   /*justify-content: flex-end;*/
 }
 
-#site-wrapper-game {
+.site-wrapper-end-game {
   min-width: 100vh;
   min-height: 100vh;
-  background-color: limegreen;
+  background-color: #FF263D;
   margin: 0 auto;
   display: flex;
 
@@ -63,6 +72,8 @@ p {
 #questionText {
   margin-top: 50px;
   font-size: 3em;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 #x-img {
@@ -118,7 +129,7 @@ p {
 
 }
 
-#answer-text {
+.answer-text {
   font-family:'Fjalla One', sans-serif;
   color: white;
   font-size: 3em;

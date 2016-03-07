@@ -3,7 +3,7 @@ console.log("global loaded");
 
 var trivia = {
 
- music : {
+ music: {
   questions: [ "Our first song of the quiz is 'Perfect' which reached number 10 on the Billboard Hot 100 in 2015. Which band from London that includes members named Niall, Liam, Harry, and Louis released the song 'Perfect' off of their 'Made in the A.M.' album?",
   "In 2015 Beyoncé Knowles had a song that reached number eighteen on the Billboard Hot 100. What is the name of this upbeat dance song that includes the line 'Man, this here like rollin' dice, man, this here like rollin dice?",
   "Occupying the number one spot on the Billboard Hot 100 for twelve weeks in 2015 our next song was certainly a smash hit. Released by Wiz Khalifa and featured in the movie 'Furious 7' as a tribute to Paul Walker, what song includes the lyrics 'It's been a long day without you my friend And Ill tell you all about it.'",
@@ -23,14 +23,16 @@ var trivia = {
 //     return false;
 // }
 
- animal : {
-  questions: ["Which continent is the only one without snakes or reptiles?", //Antarctica
-    "Owls are the only bird that can see what color?", //blue
-    "what is a pregnant goldfish called?", //A Twit
-    "proportional to their weight, men are stronger than what animal?", //horse
-    "A snail can have roughly how many teeth?", //25,000
+ animal: {
+  questions: ["Antarctica is the only continent without which one of the following?", //Antarctica
+    "What is the tallest animal in the world?", //blue
+    "A 'Twit' is what you call a pregnant what?", //A Twit
+    "Proportional to their weight, men are stronger than what animal?", //horse
+    "What are female elephants called?", //25,000
   ],
-    answers: ["Antarctica", "Blue", "Twit", "Horse", "25,000"]
+    answers: ["Snakes", "Giraffes", "Goldfish", "Horses", "Cows"],
+    wrongAnswers: ["Pigs", "Whales", "Parrots", "Lions", "Monkeys", "Mice", "Flamingos", "Dogs", "Cats", "Bats",
+    "Rhinos", "Tigers", "Lemurs", "Ferrets", "Penguins", "Crows", "Error 404. J.k."]
 },
   history : {
   questions: ["Who served as U.S. secretary of state for presidents Nixon and Ford?", //Henry Kissinger
@@ -40,6 +42,7 @@ var trivia = {
 "Who is buried in the Hotel des Invalides in Paris?" // Napoleon Bonaparte
 ],
   answers: ["Henry Kissinger", "San Jacinto", "George Fox", "Ernest Hemingway", "Napoleon Bonaparte"],
-
+  wrongAnswers: ["George Washington", "Donald Drumpf", "Kurt Vonnegut", "Winston Churchill", "Nixon", "Pablo Picasso", "George Orwell",
+  "Mark Twain", "Lenny Bruce", "Shorty", "Liza", "Sayed", "Ethan",]
   }
 }
